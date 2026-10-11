@@ -13,4 +13,5 @@ class AppRoutes {
   static const String nutrition = '/nutrition';
   static const String profile = '/profile';
   static const String settings = '/settings';
+  static const String eatHealthy = '/eat-healthy';
 }

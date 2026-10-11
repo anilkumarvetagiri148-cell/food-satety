@@ -16,7 +16,7 @@ class AlertCard extends StatelessWidget {
 
     return Card(
       margin: const EdgeInsets.only(bottom: 12),
-      color: alert.isRead ? null : AppColors.lightGreen.withOpacity(0.5),
+      color: alert.isRead ? null : AppColors.lightGreen.withValues(alpha: 0.5),
       child: InkWell(
         onTap: onTap,
         borderRadius: BorderRadius.circular(16),
@@ -28,7 +28,7 @@ class AlertCard extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: severityColor.withOpacity(0.15),
+                  color: severityColor.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Icon(Icons.notifications_active, color: severityColor, size: 24),

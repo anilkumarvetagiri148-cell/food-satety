@@ -21,6 +21,7 @@ import '../screens/alerts_screen.dart';
 import '../screens/nutrition_details_screen.dart';
 import '../screens/profile_screen.dart';
 import '../screens/settings_screen.dart';
+import '../screens/eat_healthy_screen.dart';
 
 class FoodSafeApp extends StatelessWidget {
   const FoodSafeApp({super.key});
@@ -59,6 +60,7 @@ class FoodSafeApp extends StatelessWidget {
               AppRoutes.nutrition: (context) => const NutritionDetailsScreen(),
               AppRoutes.profile: (context) => const ProfileScreen(),
               AppRoutes.settings: (context) => const SettingsScreen(),
+              AppRoutes.eatHealthy: (context) => const EatHealthyScreen(),
             },
           );
         },

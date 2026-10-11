@@ -1,4 +1,6 @@
 import 'dart:convert';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/user_model.dart';
 import '../models/scan_model.dart';
@@ -108,6 +110,13 @@ class LocalStorageService {
     _memoryCache[AppConstants.keySavedScans] = jsonEncode(jsonList);
     try {
       await _prefs?.setString(AppConstants.keySavedScans, jsonEncode(jsonList));
+      final user = FirebaseAuth.instance.currentUser;
+      if (user != null) {
+        await FirebaseFirestore.instance.collection('users').doc(user.uid).collection('scans').doc(scan.id).set({
+          ...scan.toJson(),
+          'createdAt': FieldValue.serverTimestamp(),
+        });
+      }
     } catch (_) {}
   }
 

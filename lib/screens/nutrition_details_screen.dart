@@ -88,7 +88,7 @@ class NutritionDetailsScreen extends StatelessWidget {
               decoration: BoxDecoration(
                 color: AppColors.lightGreen,
                 borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: AppColors.primaryGreen.withOpacity(0.3)),
+                border: Border.all(color: AppColors.primaryGreen.withValues(alpha: 0.3)),
               ),
               child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
